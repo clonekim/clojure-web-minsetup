@@ -1,0 +1,6 @@
+{:dev false
+ :app-version "0.0.1"
+ :port 8000
+ :thread 8
+ :max-body 104857600
+ }
