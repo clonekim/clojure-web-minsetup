@@ -22,10 +22,22 @@
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-json "0.5.0" :exclusions [cheshire]]
                  [metosin/ring-http-response "0.9.1"]
-                 [ch.qos.logback/logback-classic "1.2.3"]]
+                 [ch.qos.logback/logback-classic "1.2.3"]
+
+                 [com.lowagie/iTextAsian "1.0.0"]
+                 [net.sf.jasperreports/jasperreports "6.8.0" :exclusions [com.fasterxml.jackson.core/jackson-annotations
+                                                                          com.fasterxml.jackson.core/jackson-core
+                                                                          com.fasterxml.jackson.core/jackson-databind
+                                                                          org.bouncycastle/bcprov-jdk15on
+                                                                          org.codehaus.castor/castor-core
+                                                                          org.codehaus.castor/castor-xml
+                                                                          org.jfree/jcommon
+                                                                          org.jfree/jfreechart
+                                                                          org.eclipse.jdt.core.compiler/ecj]]]
 
   :min-lein-version "2.0.0"
   :repl-options {:init-ns backend.core}
+  :repositories { "mavenl" "http://10.46.44.5:8081/repository/maven-releases"}
   :source-paths ["src/clj"]
   :resource-paths ["resources"]
   :target-path "target/%s/"

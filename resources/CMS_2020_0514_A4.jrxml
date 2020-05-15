@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a4678da6-12c0-463e-a6ca-ac70ca76987d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<field name="username" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="sn" class="java.lang.String"/>
+	<field name="position" class="java.lang.String"/>
+	<field name="period" class="java.lang.String"/>
+	<field name="job" class="java.lang.String"/>
+	<field name="purpose" class="java.lang.String"/>
+	<field name="issueDate" class="java.lang.String"/>
+	<field name="companyName" class="java.lang.String"/>
+	<field name="companyAddress" class="java.lang.String"/>
+	<field name="nameOfCEO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="24" width="100" height="30" uuid="7cd6b2e7-8b9c-41ef-a75f-070a1e9be9ad"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[재 직 증 명 서]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="720" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<rectangle>
+				<reportElement x="1" y="-1" width="555" height="710" uuid="aedc401e-bdb6-44a4-9a18-8a06398db247"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="21" y="4" width="49" height="30" uuid="d60b01b2-e472-420b-9cc7-2ef24be7ae00"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[성  명]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="40" width="49" height="30" uuid="86fe556b-0752-4164-9633-e842e800821e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[주  소]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="74" width="49" height="30" uuid="aa99494f-f5a2-47b2-a50b-6824454f8896"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[부  서]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="108" width="49" height="30" uuid="6c1d8fd5-a0b2-4561-85c1-cd77dcbd4b08"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[근속기간]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="144" width="49" height="30" uuid="50e1f823-1080-4b27-af45-c44a97ac02ac"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[담당업무]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="179" width="49" height="30" uuid="0a5ab03f-a635-41eb-8e6f-f8d9763e442d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[용  도]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="91" y="5" width="136" height="30" uuid="af78c39d-538e-404c-a54e-8a98f8fb0190"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="40" width="450" height="30" uuid="935297c3-6eb0-4528-9847-60483ff38e3d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="74" width="100" height="30" uuid="60fda13b-92a5-4d3d-ac19-7bf6e21d5ac5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="108" width="418" height="30" uuid="30f22494-3031-410a-b859-07b509fde759"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{period}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="144" width="418" height="30" uuid="ff06e955-f065-4599-9d6b-bc97f2ca79d7"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="175" width="418" height="30" uuid="34c88b65-85d1-4ee1-9c0e-83682188fbce"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purpose}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="252" y="4" width="80" height="30" uuid="64d63d12-4a38-4969-883d-66525a142350"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[주민등록번호]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="339" y="5" width="201" height="30" uuid="5f0b2a4f-1b48-4b28-be1a-a6eabd707f38"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sn}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="252" y="74" width="49" height="30" uuid="09f5873e-1f9a-4cdf-b802-f3c99e09aa78"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[직  급]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="339" y="74" width="100" height="30" uuid="3351e4b0-00f7-4ffe-b9cf-089a65c1e079"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{position}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="132" y="355" width="290" height="30" uuid="ec64e79e-0bf1-4502-9e1a-5c07a5de2301"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[위 사람은 상기와 같이 재직하고 있음을 증명합니다.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="224" y="520" width="100" height="30" uuid="0d87a500-c8e6-46c6-9f5f-0996ee1bbd92"/>
+				<textElement verticalAlignment="Middle">
+                                  <font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+                                </textElement>
+				<textFieldExpression><![CDATA[$F{issueDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="220" y="615" width="49" height="30" uuid="2a8ff167-6ce8-4b7f-b3a7-1dcee141000b"/>
+				<textElement verticalAlignment="Middle">
+				  <font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[주  소:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="646" width="49" height="30" uuid="66c92884-076d-4cda-bc77-98b5322266ad"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[대표자:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="585" width="49" height="30" uuid="4c7279d6-c528-4510-9c81-f10b071e10ad"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[회사명:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="269" y="585" width="193" height="30" uuid="dceb6d22-0b5e-4a0a-9637-6a1cb5613d16"/>
+				<textElement verticalAlignment="Middle">
+                                  <font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+                                </textElement>
+				<textFieldExpression><![CDATA[$F{companyName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="269" y="615" width="193" height="30" uuid="7d5a25c9-a2c9-444c-be91-6d907264b14d"/>
+				<textElement verticalAlignment="Middle">
+                                  <font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+                                </textElement>
+				<textFieldExpression><![CDATA[$F{companyAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="646" width="171" height="30" uuid="055f99be-7ebe-45c8-9914-8e4cc5f287d2"/>
+				<textElement verticalAlignment="Middle">
+                                  <font size="10" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H" isPdfEmbedded="true"/>
+                                </textElement>
+				<textFieldExpression><![CDATA[$F{nameOfCEO}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="35" width="544" height="1" uuid="6fe4699e-2232-4e79-ab13-d08a75469917">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="6" y="70" width="544" height="1" uuid="50642ace-9863-47f0-8ee9-94a2c79a787a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="6" y="105" width="544" height="1" uuid="19988d8b-0b12-49e1-bdaf-e5e817920a0d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="6" y="140" width="544" height="1" uuid="cec65a3f-437a-4952-8ca6-72a16b743c3e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="6" y="175" width="544" height="1" uuid="6bcc3d3f-00b2-4772-86c1-a8a610a076d8">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="6" y="210" width="544" height="1" uuid="5749a76d-3699-4d66-9d4e-03458b4cd476">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="80" y="0" width="1" height="209" uuid="9efd3b77-d162-4051-a237-c3bf3f69137b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="249" y="0" width="1" height="35" uuid="db91ecc0-dd0f-4404-b5d7-18572e6d50ee">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="250" y="70" width="1" height="35" uuid="42ebe0da-9489-4d12-8fa2-d46595c6a8f0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="332" y="70" width="1" height="35" uuid="5af2d06b-681e-42bc-b5e0-cf51178546d0">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="333" y="0" width="1" height="35" uuid="96d23333-95e8-46a7-9b30-d7ebdbdaa72b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<image>
+				<reportElement x="480" y="640" width="50" height="50" uuid="01082a71-537d-4168-91a5-4efefa7ae3e3"/>
+				<imageExpression><![CDATA["1589332492616.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>
