@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset=utf-8/>
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script type="text/javascript">
+
+     jQuery.fn.serializeJson = function() {
+       var obj =  {};
+       try {
+         var arr = this.serializeArray();
+         if (arr) {
+           jQuery.each(arr, function() {
+             obj[this.name] = this.value;
+           });
+         }
+       }catch(e) {
+         alert(e.message);
+       }
+       return obj;
+     }
+
+    </script>
+  </head>
+
+  <body>
+
+    <div>
+
+      <div id="toolbar" style="padding:3px;margin-bottom:5px;">
+        <a href="javascript:void(0)" class="easyui-linkbutton" plain="true" data-options="iconCls:'icon-add'"  onclick="newUser()">추가</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" plain="true" data-options="iconCls:'icon-print'"  onclick="prints()">발급</a>
+      </div>
+      <table id="grid-users" class="easyui-datagrid"></table>
+    </div>
+
+
+    <div id="user" class="easyui-dialog" style="width:500px" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'">
+      <form  novalidate style="margin:0;padding:10px 20px">
+        <h3>사용자 정보</h3>
+        <div style="margin-bottom:10px">
+          <input name="username" class="easyui-textbox" required="true" label="이름" style="width:100%">
+        </div>
+        <div style="margin-bottom:10px">
+          <input name="sn" class="easyui-textbox" required="true" label="주민번호" style="width:100%">
+        </div>
+        <div style="margin-bottom:10px">
+          <input name="address" class="easyui-textbox" required="true" label="주소" style="width:100%">
+        </div>
+        <div style="margin-bottom:10px">
+          <input name="department" class="easyui-textbox" required="true" label="부서" style="width:100%">
+        </div>
+        <div style="margin-bottom:10px">
+          <input name="position" class="easyui-textbox" required="true" label="직급" style="width:100%">
+        </div>
+        <div style="margin-bottom:10px">
+          <input name="period" class="easyui-textbox" required="true" label="발급일 기준" style="width:100%">
+        </div>
+        <div style="margin-bottom:10px">
+          <input name="job" class="easyui-textbox" required="true" label="담당업무" style="width:100%">
+        </div>
+        <div style="margin-bottom:10px">
+          <input name="purpose" class="easyui-textbox" required="true" label="제출용도" style="width:100%">
+        </div>
+        <div style="text-align:right;padding:5px 0">
+          <a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveUser()" style="width:80px">저장</a>
+        </div>
+      </form>
+    </div>
+
+
+
+    <form name="hiddenFm" method="POST" action="/api/employee-serve">
+      <input type="hidden" name="datas" />
+    </form>
+
+
+    <script type="text/javascript">
+
+     const datas = [];
+
+     $(function(){
+
+       $('#grid-users').datagrid({
+
+         width: '80%',
+         height: 600,
+         idField: 'id',
+         data:[],
+         columns: [[
+           {field: '',  width: 100, checkbox: true},
+           {field: 'id', title: '번호', width: 100, sortable: true},
+           {field: 'username', title: '이름', width: 130},
+           {field: 'sn', title:'주민등록번호', width: 150},
+           {field: 'address', title: '주소', width: 200},
+           {field: 'department', title: '부서', width: 100},
+           {field: 'position', title: '직책', width: 200},
+           {field: 'period', title: '근속기간', width: 200},
+           {field: 'job', title: '담당업무', width: 100},
+           {field: 'purpose', title: '용도', width: 100}
+         ]]
+
+       });
+
+
+     });
+
+
+     function newUser() {
+       $('#user').dialog('open').dialog('center');
+     }
+
+     function saveUser() {
+       var params = _.omitBy($('#user').find('form').serializeJson(),  function(i) {
+         return i == undefined || i == null || typeof(i) == 'string' && i.trim() == '';
+       });
+
+       if(!_.isEmpty(params)) {
+
+         params.id = datas.length+1;
+         datas.push(params);
+         $('#grid-users').datagrid('loadData', datas);
+         $('#user').dialog('close');
+         $('#user').find('form').form('clear');
+       } else {
+         alert('invalid data');
+       }
+
+     }
+
+
+     function prints() {
+       var rows = $('#grid-users').datagrid('getChecked');
+
+       if(rows.length > 0 && confirm('발급하시겠습니까?')) {
+
+         document.hiddenFm.datas.value = JSON.stringify(rows);
+         document.hiddenFm.target = '_blank';
+         document.hiddenFm.submit();
+         document.hiddenFm.datas.value = '';
+       }
+     }
+    </script>
+  </body>
+
+</html>
