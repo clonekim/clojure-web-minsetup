@@ -1,0 +1,11 @@
+{:dev false
+ :app-version "0.0.1"
+ :port 8000
+ :thread 8
+ :max-body 104857600
+  :jdbc {:driver "org.mariadb.jdbc.Driver"
+        :url "jdbc:mariadb://127.0.0.1:3306/todo?useUnicode=true&characterEncoding=utf8"
+        :username "root"
+        :password "secret"
+        :max-pool-size 10}
+ }
