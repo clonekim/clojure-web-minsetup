@@ -16,6 +16,7 @@ create table todos (
   done tinyint(1) default 0,
   created_at timestamp default current_timestamp
 );
+```
 
 # Backend 구동
 
@@ -33,5 +34,6 @@ $ yarn start
 
 # binary
 
- 미리 컴파일된 jar로 바로 실행가능하다   
- bin/todo.jar를 받아서 실행할 것
+성급한 개발자에게 권장합니다.  
+미리 컴파일된 jar로 바로 실행가능  
+bin/todo.jar를 받아서 실행할 것
