@@ -1,0 +1,41 @@
+{:enums
+ {:Vendor
+  {:values [:ORACLE :MYSQL]}}
+
+ :objects
+ {:User
+  {:fields
+   {:id {:type Int}
+    :name {:type String}
+    :created {:type String}}}
+
+  :Database
+  {:fields
+   {:id {:type Int}
+    :vendor {:type (list :Vendor)}
+    :connection_string {:type String}}}}
+
+
+
+ :queries
+ {:user
+  {:type :User
+   :args {:id {:type Int}}
+   :resolve :query/get-user}}
+
+
+ :mutations
+ {:add_user
+  {:type :User
+   :args {:name {:type String}}
+   :resolve :mutation/add-user}
+
+
+  :add_db
+  {:type :Database
+   :args
+   {:vendor {:type (list :Vendor)}
+    :connect_string {:type  String}}
+   :resolve :mutation/add-db}}
+
+ }
