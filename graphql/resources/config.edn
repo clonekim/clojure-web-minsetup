@@ -1,0 +1,3 @@
+{:http/graphql {:schema "schema.edn" }
+ :http/server  {:port 9090  :handler #ig/ref :handler/app}
+ :handler/app  {:schema #ig/ref :http/graphql}}
