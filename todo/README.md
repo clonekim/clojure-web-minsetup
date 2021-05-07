@@ -4,6 +4,12 @@
 1. React(front)
 1. Clojure, MariaDB
 
+# Mariadb 
+
+```
+docker run --name mariadb -p3306:3306 -e TZ=Asia/Seoul -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=todos -d mariadb:10 ----character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+```
+
 #  Table Setup
 
  todos라는 테이블을 작성합니다.
